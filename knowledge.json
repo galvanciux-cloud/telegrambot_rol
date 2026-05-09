@@ -1,0 +1,83 @@
+{
+  "metadata": {
+    "version": "2.0.0",
+    "last_updated": "2026-05-06",
+    "description": "Base de conocimientos de NOVA - Agente de IA. Añade conocimientos específicos aquí para que el agente pueda consultarlos mediante RAG."
+  },
+  "knowledge": [
+    {
+      "id": "kb_001",
+      "category": "identidad",
+      "title": "Identidad de NOVA",
+      "content": "NOVA es un agente de inteligencia artificial conversacional desarrollado en Python. Utiliza el modelo HuggingFaceH4/zephyr-7b-beta a través de la API de HuggingFace Inference. Está diseñado para ser un asistente completo con capacidades de búsqueda web, memoria a largo plazo, RAG, y múltiples herramientas útiles. Su nombre NOVA hace referencia a una estrella que brilla con intensidad, simbolizando su capacidad para iluminar con información útil.",
+      "tags": ["identidad", "nova", "presentación", "agente"]
+    },
+    {
+      "id": "kb_002",
+      "category": "capacidades",
+      "title": "Capacidades de búsqueda web",
+      "content": "NOVA puede buscar en internet usando DuckDuckGo Search. Cuando un usuario pregunta sobre información actual, noticias, datos recientes o cualquier tema que requiera información actualizada, NOVA realiza una búsqueda web, analiza los resultados y sintetiza una respuesta clara. También puede extraer y resumir el contenido de URLs específicas que el usuario proporcione.",
+      "tags": ["búsqueda", "web", "internet", "duckduckgo", "actualidad"]
+    },
+    {
+      "id": "kb_003",
+      "category": "capacidades",
+      "title": "Sistema de memoria de NOVA",
+      "content": "NOVA tiene un sistema de memoria de tres capas: (1) Memoria de conversación a corto plazo que mantiene el contexto de los últimos mensajes intercambiados. (2) Memoria semántica a largo plazo que usa búsqueda vectorial para recuperar recuerdos por similitud de significado, no por coincidencia exacta de palabras. (3) Memoria estructurada en SQLite que almacena datos del usuario como nombre, preferencias y notas de forma persistente entre sesiones.",
+      "tags": ["memoria", "corto plazo", "largo plazo", "persistencia", "vectorial"]
+    },
+    {
+      "id": "kb_004",
+      "category": "capacidades",
+      "title": "Sistema RAG de NOVA",
+      "content": "NOVA implementa Retrieval-Augmented Generation (RAG) usando ChromaDB como base de datos vectorial y sentence-transformers/all-MiniLM-L6-v2 para generar embeddings. Cuando se hace una pregunta, el sistema: vectoriza la consulta, busca los fragmentos más relevantes en la base de conocimientos, los inyecta como contexto en el prompt del modelo, y genera una respuesta informada. Los conocimientos se pueden añadir editando knowledge.json, con el comando /add_knowledge, o automáticamente desde búsquedas web.",
+      "tags": ["RAG", "chromadb", "embeddings", "vectorial", "conocimiento"]
+    },
+    {
+      "id": "kb_005",
+      "category": "herramientas",
+      "title": "Herramientas disponibles",
+      "content": "NOVA dispone de las siguientes herramientas: /search para buscar en internet, /wiki para consultar Wikipedia, /weather para el clima de cualquier ciudad, /translate para traducir entre idiomas, /calc para cálculos matemáticos, /remember para guardar recuerdos, /recall para recuperarlos, /note para notas personales, /notes para ver las notas, /summarize para resumir URLs, /add_knowledge para añadir conocimientos al sistema RAG, y /reset para reiniciar el contexto de conversación.",
+      "tags": ["comandos", "herramientas", "funciones", "telegram"]
+    },
+    {
+      "id": "kb_006",
+      "category": "tecnología",
+      "title": "Stack tecnológico de NOVA",
+      "content": "NOVA está construido con Python 3.10+. Librerías principales: python-telegram-bot para la integración con Telegram, huggingface_hub para la inferencia del modelo de IA, chromadb para almacenamiento vectorial, sentence-transformers para embeddings, duckduckgo-search para búsquedas web, httpx para peticiones HTTP, beautifulsoup4 para scraping web, y sqlite3 (incorporado) para memoria persistente. El modelo de IA principal es HuggingFaceH4/zephyr-7b-beta, un modelo de 7B parámetros optimizado para instrucciones.",
+      "tags": ["tecnología", "python", "stack", "librerías", "arquitectura"]
+    },
+    {
+      "id": "kb_007",
+      "category": "personalidad",
+      "title": "Personalidad de NOVA",
+      "content": "NOVA tiene una personalidad amigable, útil y proactiva. Se expresa en español por defecto pero es multilingüe. Es directo pero amable, y prefiere dar respuestas concisas y útiles en lugar de largas explicaciones innecesarias. Cuando no sabe algo, lo admite honestamente y ofrece buscar la información. Tiene un toque de curiosidad intelectual y disfruta ayudando a resolver problemas. Usa un tono cercano pero profesional.",
+      "tags": ["personalidad", "tono", "estilo", "comunicación"]
+    },
+    {
+      "id": "kb_008",
+      "category": "voz",
+      "title": "Capacidades de voz de NOVA",
+      "content": "NOVA puede hablar y escuchar. Usa Microsoft Edge Neural TTS (edge-tts) para generar voces de alta calidad en más de 10 idiomas, con voces masculinas y femeninas. Para escuchar, usa OpenAI Whisper Large v3 a través de la API de HuggingFace, que puede transcribir audio en 99 idiomas. Los usuarios pueden enviar mensajes de voz y NOVA los transcribirá automáticamente. Con el comando /voice se activa el modo voz donde NOVA responde siempre con audio. Con /speak <texto> convierte cualquier texto en mensaje de voz. Con /voices se consultan los idiomas disponibles.",
+      "tags": ["voz", "TTS", "ASR", "whisper", "edge-tts", "audio", "hablar", "escuchar"]
+    },
+    {
+      "id": "kb_009",
+      "category": "voz",
+      "title": "Cómo usar la voz en NOVA",
+      "content": "Para interactuar por voz con NOVA: (1) Envía un mensaje de voz directamente en el chat de Telegram y NOVA lo transcribirá con Whisper y responderá. (2) Usa /voice para activar el modo voz: a partir de entonces, todas las respuestas de NOVA serán mensajes de voz en vez de texto. Vuelve a usar /voice para desactivar. (3) Usa /speak <texto> para que NOVA diga en voz alta un texto específico sin cambiar el modo. (4) Usa /voices para ver todos los idiomas y voces disponibles. El idioma y género de voz se configuran en el archivo .env con VOICE_LANGUAGE y VOICE_GENDER.",
+      "tags": ["voz", "comandos", "modo voz", "audio", "instrucciones"]
+    },
+    {
+      "id": "kb_010",
+      "category": "voz",
+      "title": "Idiomas de voz disponibles en NOVA",
+      "content": "NOVA soporta voces en los siguientes idiomas: Español (España: Elvira/Alvaro, México: Dalia/Jorge, Argentina: Elena/Tomas), Inglés (EEUU: Jenny/Guy, UK: Sonia/Ryan), Francés (Denise/Henri), Alemán (Katja/Conrad), Italiano (Elsa/Diego), Portugués (Francisca/Antonio), Japonés (Nanami/Keita), Coreano (SunHi/InJoon), Chino (Xiaoxiao/Yunxi), Ruso (Svetlana/Dmitry). Cada idioma tiene voz femenina y masculina. La velocidad de voz se puede ajustar con VOICE_RATE en .env.",
+      "tags": ["idiomas", "voces", "TTS", "español", "inglés", "multilingüe"]
+    }
+  ],
+  "custom_entries": {
+    "_instructions": "Añade tus propios conocimientos aquí debajo. Cada entrada debe tener: id, category, title, content y tags. El sistema RAG los indexará automáticamente al iniciar.",
+    "entries": []
+  }
+}

@@ -1,4 +1,4 @@
-# RAG&ROL 🤖
+# Billy AI Agent 🤖
 
 Agente de IA conversacional con **Ollama** (DeepSeek-R1 / Llama3.1 local), RAG con ChromaDB, sistema de roles/personalidades y Telegram como interfaz.
 
